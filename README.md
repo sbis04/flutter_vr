@@ -1,4 +1,4 @@
-# webview_demo
+# Flutter WebView (for testing React360)
 
 A new Flutter project.
 
