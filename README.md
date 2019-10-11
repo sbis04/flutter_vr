@@ -1,6 +1,6 @@
-# Flutter WebView
+# Flutter VR
 
-A new Flutter project.
+Flutter VR app using React 360 and GitHub Pages.
 
 ## Getting Started
 
