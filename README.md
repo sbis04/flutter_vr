@@ -1,6 +1,6 @@
-# Flutter VR
+# flutter_vr2
 
-Flutter VR app using React 360 and GitHub Pages.
+A new Flutter project.
 
 ## Getting Started
 
