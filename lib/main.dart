@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_custom_tabs/flutter_custom_tabs.dart';
 
 void main() {
-  SystemChrome.setEnabledSystemUIOverlays([]);
   runApp(MyApp());
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -30,31 +29,19 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Row(),
-              Text(
+              const Text(
                 'Flutter VR',
                 style: TextStyle(
-                  fontSize: 60,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
-                ),
+                    fontSize: 60,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.blue[800],
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Text(
-                    'ENTER',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                onPressed: () => _launchURL(context),
-              ),
+              const SizedBox(height: 20),
+              GestureDetector(
+                  onTap: () => _launchURL(context),
+                  child: Container(
+                    child: Text("ENTER"),
+                  ))
             ],
           ),
         ),
@@ -66,12 +53,11 @@ class MyApp extends StatelessWidget {
     try {
       await launch(
         'https://sbis04.github.io/demo360',
-        option: CustomTabsOption(
+        customTabsOption: CustomTabsOption(
           toolbarColor: Theme.of(context).primaryColor,
           enableDefaultShare: true,
           enableUrlBarHiding: true,
           showPageTitle: false,
-          animation: CustomTabsAnimation.slideIn(),
           extraCustomTabs: const <String>[
             // ref. https://play.google.com/store/apps/details?id=org.mozilla.firefox
             'org.mozilla.firefox',
